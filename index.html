@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #chatbox { width: 300px; height: 400px; border: 1px solid #ccc; overflow-y: scroll; padding: 10px; }
+        #input { width: 300px; }
+    </style>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <div id="chatbox"></div>
+    <input type="text" id="input">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('input');
+            const chatbox = document.getElementById('chatbox');
+            const message = input.value;
+            chatbox.innerHTML += '<div>User: ' + message + '</div>';
+            // Simulated chatbot response
+            setTimeout(() => { chatbox.innerHTML += '<div>Bot: Hello! How can I help you?</div>'; }, 1000);
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
